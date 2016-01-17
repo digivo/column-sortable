@@ -77,6 +77,11 @@ trait Sortable
      */
     public static function link(array $parameters) //Extending Blade; Blade sends array.
     {
+        if (is_array($parameters[0]))
+        {
+            $parameters = $parameters[0];
+        }
+
         if (count($parameters) === 1) {
             $parameters[1] = ucfirst($parameters[0]);
         }
